@@ -1,3 +1,4 @@
+#241RDC004
 class Node:
     def __init__(self, value):
         self.value = value
@@ -27,6 +28,18 @@ class LinkedList:
     #                            #
     #                            #
     ##############################
+    def has_loop(self):
+        slow = self.head
+        fast = self.head
+
+        while fast and fast.next:
+            if slow == fast:
+                return True
+            slow = slow.next
+            fast = fast.next.next
+        
+        return False
+
     
     
     
